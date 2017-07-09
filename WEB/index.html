@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
      
     <style type="text/css">
+    input { display: none }
     ul{
       padding: 0px
     }
@@ -20,8 +21,18 @@
       }
     i{
       margin-right: 10px
-    }  
+    }
+    img{
+      display: block;
+      padding: 0px;
+      margin-left:  auto;
+      margin-right:   auto;      
+      max-height: 50px;
+      max-width: 50px;  
+    } 
+    
     </style>
+
   </head>
   <body>
     <div class="container">
@@ -73,7 +84,119 @@
               <h3 class="panel-title"><span class="glyphicon glyphicon-th" style="margin-right:5px;" aria-hidden="true"></span>Readers</h3>
             </div>
             <div class="panel-body">
-              Panel content
+              <table class="table table-bordered table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th style="width: 40px">#</th>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th style="width: 50px">Avatar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>STU001</td>
+                    <td>Trần Nguyễn Thanh Nam</td>
+                    <td>Namtnt@yahoo.com</td>
+                    <td>09238754634</td>
+                    <td><img src="../WEB/img/stu.jpg"></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>INS001</td>
+                    <td>Lê Thanh Sơn</td>
+                    <td>sontl@gmail.com</td>
+                    <td></td>
+                    <td><img src="../WEB/img/doctor.jpg"></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>STU002</td>
+                    <td>Đinh La Thanh</td>
+                    <td>thanhdl@gmail.com</td>
+                    <td>08375635</td>
+                    <td><img src="../WEB/img/images.png"></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>STU003</td>
+                    <td>Nguyễn Thị Hiền</td>
+                    <td>hiennt@yahoo.com</td>
+                    <td></td>
+                    <td><img src="../WEB/img/girl.jpg"></td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>STU004</td>
+                    <td>Lê Nguyên Thành</td>
+                    <td>thanhln@gmail.com</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>STU005</td>
+                    <td>Nguyễn Hải Nam</td>
+                    <td>namnh@yahoo.com</td>
+                    <td>0967684735</td>
+                    <td><img src="../WEB/img/5.jpg"></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><i class="fa fa-plus" aria-hidden="true"></i>New Reader</button>
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="exampleModalLabel">New Reader</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form class="form-horizontal">
+                        <div class="form-group">
+                          <label for="inputCode" class="col-sm-2 control-label">Code:</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputCode" placeholder="Enter reader code">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputName" class="col-sm-2 control-label">Name:</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName" placeholder="Enter reader name">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-sm-2 control-label">Email:</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="Enter reader email">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPhone" class="col-sm-2 control-label">Phone:</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputPhone" placeholder="Enter reader phone">
+                          </div>
+                        </div>
+                                            
+                      </form>
+                      <div class="row form-group">
+                        <label for="inputAvatar" class="col-sm-2" style="text-align: right;">Avatar:</label>
+                        <div class="col-sm-10">
+                          <input type="file" style="display: none" id="choose-file" />
+                          <button id="btnTest" class="btn btn-default btn-xs active">Browse...</button> No file selected
+                      </div>   
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+                      <button type="button" class="btn btn-default">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -82,8 +205,17 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.min.js"></script>
+    <script src="../WEB/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../WEB/js/bootstrap.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script>
+      $(document).ready(function(){
+        $( '#btnTest' ).click( function() {
+          $( '#choose-file' ).trigger( 'click' );
+          });
+      });
+    </script> 
+    
   </body>
 </html>
